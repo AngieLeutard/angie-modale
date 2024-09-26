@@ -1,71 +1,103 @@
-# Getting Started with Create React App
+angie-modale
+Description
+Français
+angie-modale est un composant React simple et réutilisable pour afficher des modales. Il permet d'intégrer facilement des fenêtres modales dans vos projets React en offrant des fonctionnalités comme la fermeture via la touche "Escape" et la gestion du clic en dehors de la fenêtre modale.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+English
+angie-modale is a simple and reusable React component for displaying modals. It allows easy integration of modal windows into your React projects, offering features like closing via the "Escape" key and managing clicks outside the modal window.
 
-## Available Scripts
+Installation
+Français
+Installez le package via npm :
 
-In the project directory, you can run:
+bash
+Copier le code
+npm install angie-modale
+English
+Install the package via npm:
 
-### `npm start`
+bash
+Copier le code
+npm install angie-modale
+Utilisation
+Français
+Voici un exemple de comment utiliser angie-modale dans votre projet React :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+jsx
+Copier le code
+import React, { useState } from 'react';
+import { Modal } from 'angie-modale';
+import 'angie-modale/dist/modal.css'; // Assurez-vous d'importer les styles
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-### `npm test`
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  return (
+    <div>
+      <button onClick={openModal}>Ouvrir la Modale</button>
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <h2>Contenu de la modale</h2>
+        <p>Ceci est une modale réutilisable !</p>
+      </Modal>
+    </div>
+  );
+};
 
-### `npm run build`
+export default App;
+English
+Here’s an example of how to use angie-modale in your React project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+jsx
+Copier le code
+import React, { useState } from 'react';
+import { Modal } from 'angie-modale';
+import 'angie-modale/dist/modal.css'; // Make sure to import the styles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const App = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
-### `npm run eject`
+  return (
+    <div>
+      <button onClick={openModal}>Open Modal</button>
+      <Modal isOpen={isOpen} onClose={closeModal}>
+        <h2>Modal Content</h2>
+        <p>This is a reusable modal!</p>
+      </Modal>
+    </div>
+  );
+};
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default App;
+Props
+Français
+Prop	Type	Description
+isOpen	boolean	Définit si la modale est ouverte ou fermée
+onClose	function	Fonction appelée lorsque la modale est fermée
+children	node	Contenu à afficher dans la modale
+English
+Prop	Type	Description
+isOpen	boolean	Controls whether the modal is open or closed
+onClose	function	Function to call when the modal is closed
+children	node	Content to display inside the modal
+Styles
+Français
+N'oubliez pas d'importer les styles dans votre projet en ajoutant l'import suivant dans votre fichier principal :
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+js
+Copier le code
+import 'angie-modale/dist/modal.css';
+English
+Don't forget to import the styles into your project by adding the following import in your main file:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+js
+Copier le code
+import 'angie-modale/dist/modal.css';
+License
+MIT
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# angie-modale
