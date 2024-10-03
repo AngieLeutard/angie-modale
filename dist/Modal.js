@@ -12,7 +12,8 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 var Modal = function Modal(_ref) {
   var isOpen = _ref.isOpen,
     onClose = _ref.onClose,
-    children = _ref.children;
+    children = _ref.children,
+    className = _ref.className;
   (0, _react.useEffect)(function () {
     var handleEsc = function handleEsc(e) {
       if (e.key === 'Escape') onClose();
@@ -26,7 +27,7 @@ var Modal = function Modal(_ref) {
   }, [isOpen, onClose]);
   if (!isOpen) return null;
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "modal-overlay",
+    className: "modal-overlay ".concat(className ? className : ''),
     onClick: onClose
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "modal-content",
